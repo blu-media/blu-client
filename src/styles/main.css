@@ -1,0 +1,283 @@
+:root {
+    --blu-dark-orange: #ff6600;
+    --blu-med-orange: #ffa600;
+}
+
+@font-face {
+    font-family: Novecento;
+    src: url(../fonts/Novecentowide-DemiBold.otf);
+}
+
+/* COLORS AND BACKGROUNDS */
+
+.colorLightGrey {
+    color: rgb(156, 156, 156);
+}
+
+.colorBlack {
+    color: #000000;
+}
+
+.colorWhite {
+    color: #ffffff;
+}
+
+.colorDarkGrey {
+    color: #828282;
+}
+
+.colorBluDarkOrange {
+    color: var(--blu-dark-orange);
+}
+
+.colorBluMedOrange {
+    color: var(--blu-med-orange);
+}
+
+.bgGrey1 {
+    background-color: #eeeeee;
+}
+
+.bgGreen {
+    background-color: green;
+}
+
+.bgGreyTransparent {
+    background-color: rgba(128, 128, 128, 0.5)
+}
+
+.bgWhite {
+    background-color: white;
+}
+
+.bgDarkOrange {
+    background-color: var(--blu-dark-orange)
+}
+
+.bgMedOrange {
+    background-color: var(--blu-med-orange);
+}
+
+/* TEXT AND FONTS */
+
+.fontFamilyNovecento {
+    font-family: Novecento;
+}
+
+.fontSize12px {
+    font-size: 12px;
+}
+
+.fontSize14px {
+    font-size: 14px;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.textAlignRight {
+    text-align: right;
+}
+
+.noDecoration {
+    text-decoration: none;
+}
+
+/* DISPLAYS AND POSITIONS */
+
+.displayInline {
+    display: inline;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.flexAlignCenter {
+    align-items: center;
+}
+
+.flexSpaceBetween {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.flexColumn {
+    flex-direction: column;
+}
+
+.positionAbsolute {
+    position: absolute;
+}
+
+.zIndex1000 {
+    z-index: 1000;
+}
+
+.topLeft {
+    top: 0;
+    left: 0;
+}
+
+/* PADDING AND MARGINS */
+
+.noMargin {
+    margin: 0;
+}
+
+.marginAuto {
+    margin: auto;
+}
+
+.noVerticalMargin {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.verticalMargin3px {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.verticalMargin15px {
+    margin: 15px 0px;
+}
+
+.marginBottom10px {
+    margin-bottom: 10px;
+}
+
+.marginBottom25px {
+    margin-bottom: 25px;
+}
+
+.marginTop25px {
+    margin-top: 25px;
+}
+
+.horizontalMargin2px {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.horizontalMargin10px {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.horizontalMargin15px {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.padding15px {
+    padding: 15px;
+}
+
+.noVerticalPadding {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.verticalPadding5px {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.verticalPadding15px {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.horizontalPadding15px {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* HEIGHTS AND WIDTHS */
+
+.minWidth {
+    width: min-content;
+}
+
+.width25P {
+    width: 25%;
+}
+
+.width50P {
+    width: 50%;
+}
+
+.width75P {
+    width: 75%;
+}
+
+.widthMaxContent {
+    width: max-content;
+}
+
+.minHeight {
+    height: min-content;
+}
+
+.fullHeight {
+    height: 100%;
+}
+
+.fullWidthAndHeight {
+    width: 100%;
+    height: 100%;
+}
+
+/* BORDERS */
+
+.borderGrey1px {
+    border: 1px solid #808080;
+}
+
+.borderDarkOrange1px {
+    border: 1px solid var(--blu-dark-orange);
+}
+
+.borderMedOrange1px {
+    border: 1px solid var(--blu-med-orange);
+}
+
+.borderTopGrey1px {
+    border-top: 1px solid #808080;
+}
+
+.borderBottomGrey1px {
+    border-bottom: 1px solid #808080;
+}
+
+.borderRadius5px {
+    border-radius: 5px;
+}
+
+.borderRadius10px {
+    border-radius: 10px;
+}
+
+.borderTest {
+    border: 2px black solid;
+}
+
+/* MISCELLANEOUS */
+
+.circle {
+    border-radius: 50%;
+}
+
+.profilePicture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px black;
+}

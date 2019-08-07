@@ -1,0 +1,43 @@
+.eventCircle {
+  width: 5px !important;
+  height: 5px !important;
+  background-color: teal;
+}
+
+.timeAndCircleWidth {
+  width: 100% !important;
+}
+
+.timeline {
+  position: absolute;
+  left: 80px;
+  width: 1px;
+  background-color: #828282;
+}
+
+.timelineCircle {
+  min-width: 10px;
+  max-width: 10px;
+  min-height: 10px;
+  max-height: 10px;
+  margin-left: 9px;
+  background-color: #828282;
+}
+
+.negativeTimelineMarginLeft {
+  margin-left: -73px;
+}
+
+.timelineMarginRight {
+  margin-left: 30px;
+}
+
+.eventTimelineSize {
+  min-width: 225px;
+  max-width: 225px;
+  min-height: 100px;
+}
+
+.dateTextWidth {
+  width: 60px !important;
+}

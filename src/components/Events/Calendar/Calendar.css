@@ -1,0 +1,11 @@
+.rowHeight {
+  min-height: 40px;
+}
+
+.rowBody {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.rowBody:last-child {
+  border-bottom: 1px solid #828282;
+}

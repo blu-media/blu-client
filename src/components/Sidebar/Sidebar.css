@@ -1,0 +1,11 @@
+.sidebarLink {
+  border-bottom: 1px #c7c7c7 solid;
+}
+
+.sidebarLink:hover {
+  cursor: pointer;
+}
+
+.logoutBorderTop {
+  border-top: 1px #c7c7c7 solid;
+}
