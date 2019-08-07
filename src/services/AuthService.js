@@ -1,3 +1,4 @@
+import axios from 'axios';
 import decode from 'jwt-decode';
 
 export default class AuthService {
@@ -50,24 +51,23 @@ export default class AuthService {
 
   signIn(token, profile) {
     return new Promise((resolve, reject) => {
-      const profileAndToken = JSON.stringify({
+      const profileAndToken = {
         access_token: token,
         profile: profile
-      });
+      }
 
       const options = {
-        method: 'POST',
-        body: profileAndToken,
+        method: 'post',
+        url: `${process.env.REACT_APP_SERVER_URL}/api/auth/google`,
+        data: profileAndToken,
         headers: {
           'Content-Type': 'application/json'
-        },
-        mode: 'cors',
-        cache: 'default'
+        }
       };
 
-      fetch(`${process.env.REACT_APP_SERVER_URL}/api/auth/google`, options)
+      axios(options)
         .then(response => {
-          const token = response.headers.get('x-auth-token');
+          const token = response.headers['x-auth-token']
           if (token) {
             this.setToken(token);
             resolve(true);
