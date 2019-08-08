@@ -92,7 +92,9 @@ class App extends React.Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/events" exact component={Events} />
-            <Route path="/events/:eventId" exact component={IndividualEvent} />
+            <Route path="/events/:eventId" exact
+              render={(props) => <IndividualEvent {...props} user={this.state.user} />}
+            />
             <Route path="/organizations" component={Organizations} />
           </Switch>
         </div>

@@ -19,13 +19,11 @@ class IndividualEvent extends React.Component {
 
         this.Auth = new AuthService();
 
-        console.log(this.Auth.getProfile())
-
         this.state = {
             eventId: null,
             event: null,
             rsvpStatus: null,
-            user: this.Auth.getProfile()
+            user: this.props.user
         }
     }
 
@@ -64,6 +62,7 @@ class IndividualEvent extends React.Component {
     }
 
     componentWillMount() {
+        console.log(this.props)
         let eventId = this.props.match.params.eventId;
 
         this.setState({
