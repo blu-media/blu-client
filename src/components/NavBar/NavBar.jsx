@@ -37,7 +37,7 @@ class NavBar extends React.Component {
             } else {
                 this.setSelectedIcon('Home')
             }
-        }, 1);
+        }, 0);
     }
 
     setSelectedIcon(icon) {

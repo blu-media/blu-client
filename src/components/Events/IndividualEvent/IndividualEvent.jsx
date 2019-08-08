@@ -44,18 +44,20 @@ class IndividualEvent extends React.Component {
                     event: event
                 });
 
-                let userId = this.state.user.id;
-                const searchURL = `${process.env.REACT_APP_SERVER_URL}/api/events/${eventId}/rsvps/${userId}`;
-                axios
-                    .get(searchURL)
-                    .then((response) => {
-                        let rsvp = response.data;
-                        if (rsvp.length > 0) {
-                            this.setState({
-                                rsvpStatus: rsvp[0].response
-                            });
-                        }
-                    });
+                if (!this.state.user) {
+                    let userId = this.state.user.id;
+                    const searchURL = `${process.env.REACT_APP_SERVER_URL}/api/events/${eventId}/rsvps/${userId}`;
+                    axios
+                        .get(searchURL)
+                        .then((response) => {
+                            let rsvp = response.data;
+                            if (rsvp.length > 0) {
+                                this.setState({
+                                    rsvpStatus: rsvp[0].response
+                                });
+                            }
+                        });
+                }
             });
     }
 
