@@ -19,6 +19,8 @@ class IndividualEvent extends React.Component {
 
         this.Auth = new AuthService();
 
+        console.log(this.Auth.getProfile())
+
         this.state = {
             eventId: null,
             event: null,
@@ -44,7 +46,7 @@ class IndividualEvent extends React.Component {
                     event: event
                 });
 
-                if (!this.state.user) {
+                if (this.state.user !== null) {
                     let userId = this.state.user.id;
                     const searchURL = `${process.env.REACT_APP_SERVER_URL}/api/events/${eventId}/rsvps/${userId}`;
                     axios
