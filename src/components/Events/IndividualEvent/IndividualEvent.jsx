@@ -22,8 +22,7 @@ class IndividualEvent extends React.Component {
         this.state = {
             eventId: null,
             event: null,
-            rsvpStatus: null,
-            user: this.props.user
+            rsvpStatus: null
         }
     }
 
@@ -44,8 +43,8 @@ class IndividualEvent extends React.Component {
                     event: event
                 });
 
-                if (this.state.user !== null) {
-                    let userId = this.state.user.id;
+                if (this.props.user !== null) {
+                    let userId = this.props.user.id;
                     const searchURL = `${process.env.REACT_APP_SERVER_URL}/api/events/${eventId}/rsvps/${userId}`;
                     axios
                         .get(searchURL)
