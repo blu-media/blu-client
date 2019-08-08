@@ -16,6 +16,7 @@ class IndividualEvent extends React.Component {
         this.DateService = new DateService();
         this.fetchEvent = this.fetchEvent.bind(this);
         this.resetButtonStyling = this.resetButtonStyling.bind(this);
+        this.eventId = this.props.match.params.eventId;
 
         this.Auth = new AuthService();
 
@@ -29,7 +30,7 @@ class IndividualEvent extends React.Component {
     resetButtonStyling(response) {
         this.setState({
             rsvpStatus: response
-        })
+        });
     }
 
     fetchEvent(eventId) {
@@ -44,15 +45,11 @@ class IndividualEvent extends React.Component {
                 });
 
                 if (this.props.user !== null) {
-                    let userId = this.props.user.id;
-                    const searchURL = `${process.env.REACT_APP_SERVER_URL}/api/events/${eventId}/rsvps/${userId}`;
-                    axios
-                        .get(searchURL)
-                        .then((response) => {
-                            let rsvp = response.data;
-                            if (rsvp.length > 0) {
+                    this.fetchRSVP(eventId, this.props.user.id)
+                        .then((RSVP) => {
+                            if (RSVP !== null) {
                                 this.setState({
-                                    rsvpStatus: rsvp[0].response
+                                    rsvpStatus: RSVP
                                 });
                             }
                         });
@@ -60,15 +57,48 @@ class IndividualEvent extends React.Component {
             });
     }
 
-    componentWillMount() {
-        console.log(this.props)
-        let eventId = this.props.match.params.eventId;
-
-        this.setState({
-            eventId: eventId,
-            event: this.fetchEvent(eventId)
+    fetchRSVP(eventId, userId) {
+        return new Promise((resolve, reject) => {
+            const searchURL = `${process.env.REACT_APP_SERVER_URL}/api/events/${eventId}/rsvps/${userId}`;
+            axios
+                .get(searchURL)
+                .then((response) => {
+                    let rsvp = response.data;
+                    if (rsvp.length > 0) {
+                        resolve(rsvp[0].response);
+                    } else resolve(null);
+                });
         })
     }
+
+    componentDidMount() {
+        this.setState({
+            eventId: this.eventId,
+            event: this.fetchEvent(this.eventId)
+        })
+    }
+
+    componentDidUpdate(prevProps) {
+        let user = this.props.user;
+        if (prevProps.user !== user) {
+            if (user === null) {
+                this.setState({
+                    rsvpStatus: null
+                });
+            } else {
+                this.fetchRSVP(this.eventId, this.props.user.id)
+                    .then((RSVP) => {
+                        if (RSVP !== null) {
+                            this.setState({
+                                rsvpStatus: RSVP
+                            });
+                        }
+                    });
+            }
+
+        }
+    }
+
 
     render() {
         let date;
@@ -89,15 +119,14 @@ class IndividualEvent extends React.Component {
             'colorBluMedOrange': !rsvpGoing,
             'bgMedOrange': rsvpGoing,
             'colorWhite': rsvpGoing
-        })
+        });
 
         let interestedButtonClass = classnames({
             'borderMedOrange1px': !rsvpInterested,
             'colorBluMedOrange': !rsvpInterested,
             'bgMedOrange': rsvpInterested,
             'colorWhite': rsvpInterested
-        })
-
+        });
 
         return (
             <div className="displayFlex flexColumn flexAlignCenter fontSize12px">

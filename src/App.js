@@ -25,6 +25,8 @@ class App extends React.Component {
       sidebarOpen: false
     }
 
+    console.log(this.state.user);
+
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
 
@@ -44,7 +46,8 @@ class App extends React.Component {
 
     this.setState({
       loggedIn: false,
-      sidebarOpen: false
+      sidebarOpen: false,
+      user: null
     });
   }
 

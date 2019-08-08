@@ -50,6 +50,7 @@ class NavBar extends React.Component {
         let success = await this.Auth.signIn(response.accessToken,
             response.profileObj);
         if (success) {
+            console.log("YER");
             let profile = this.Auth.getProfile();
             this.props.login(profile);
         }
