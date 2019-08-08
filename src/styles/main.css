@@ -166,6 +166,11 @@
     margin-left: 2px;
 }
 
+.horizontalMargin5px {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
 .horizontalMargin10px {
     margin-right: 10px;
     margin-left: 10px;
@@ -273,11 +278,4 @@
 
 .circle {
     border-radius: 50%;
-}
-
-.profilePicture {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px black;
 }

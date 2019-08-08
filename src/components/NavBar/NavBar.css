@@ -3,52 +3,46 @@
     src: url(../../fonts/Novecentowide-DemiBold.otf);
 }
 
-:root {
-    --header-height: 85px;
-}
-
-#header-logo-wrapper {
-    margin: auto 0 auto 50px;
-    cursor: pointer;
-    float: left;
-    height: calc(var(--header-desktop-height) * .8);
-    width: calc(var(--header-desktop-height) * .8);
-    min-height: calc(var(--header-desktop-height) * .8);
-    min-width: calc(var(--header-desktop-height) * .8);
-} 
-
-/* #header-menu-wrapper {
-    margin: auto 0 auto 50px;
-    cursor: pointer;
-    float: left;
-    height: calc(var(--header-desktop-height) * .8);
-    width: calc(var(--header-desktop-height) * .8);
-    min-height: calc(var(--header-desktop-height) * .8);
-    min-width: calc(var(--header-desktop-height) * .8);
-}  */
-#header-logo-wrapper a, #header-logo-wrapper a img {
-    display: block;
-    height: 100%;
-    width: 100%;
-} 
-
-header {
-    height: var(--header-height);
-    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1), 0 0 6px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
 #menuIcon {
     width: 35px;
     height: 35px;
 }
 
 .googleLoginButton {
-    box-shadow: none !important;
+    box-shadow: 0 0 3px gray !important;
     border-radius: 5px !important;
-    color: white !important;
-    border: 1px solid #ffa600 !important;
-    background-color: #ffa600 !important;
+    color: #FF6600 !important;
+    background-color: white !important;
     font-family: Novecento !important;
     font-size: 10px;
+}
+
+.orgIcon {
+    width: 35px;
+    height: 35px; 
+}
+
+.profilePicture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px white;
+    border: 1px white solid;
+}
+
+#orgIcon {
+    width: 35px;
+    height: 35px;
+}
+
+#menuIcon {
+    width: 38px;
+    height: 38px;
+}
+
+#header {
+    background-image: linear-gradient(to bottom, #FFD701, #FF6600);
+    box-shadow: 0 0 2px gray;
+    margin-bottom: 20px;
+    height: 85px;
 }
